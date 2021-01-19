@@ -15,7 +15,8 @@ def skIzvele():
 @app.route('/IIC')
 def iic():
   return render_template('IIC.html')  
-  
+
+
 @app.route('/vecaku_pietekumus')
 def vPieteikums():
   return render_template('vecaku_pieteikums.html')
