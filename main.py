@@ -1,4 +1,5 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify,json ,request, make_response
+import dati
 
 app = Flask(__name__)
 app.config['JSON_AS_ASCII']=False
@@ -20,9 +21,20 @@ def iic():
 def vPieteikums():
   return render_template('vecaku_pieteikums.html')
 
-@app.route('/registret_IIC')
+@app.route('/registret_IIC',methods=['POST'])
 def regIIC():
-  return 1
+  with open("dati/iic.json", "r", encoding='utf-8') as f:
+    dati = json.loads(f.read())
+  jaunsIIC= json.loads(request.data)
+  for d in dati:
+    if d["iicnosaukums"]==jaunsIIC["iicnosaukums"]:
+      return "ddddddddddddddddddddddd"
+     
+  dati.append(jaunsIIC)
+  with open("dati/iic.json", "w", encoding='utf-8') as f:
+    f.write(json.dumps(dati))
+ # return jsonify(jaunsIIC)
+    return "asdlkgjdflkhjgl"
 
 if __name__ == "__main__":
    app.run("0.0.0.0", debug=True)
