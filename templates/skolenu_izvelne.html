@@ -15,7 +15,7 @@
     <img src="../images/logo.png" alt="logo">
     
     <div class="container p-3 my-3 bg-warning text-white">
-    <p>Datums un laiks: <b>{{ date_time }}</b></p>   
+    <p>Datums un laiks:(UTC: 0) <b>{{ date_time }}</b></p>   
   
   <br>
   <div class="container">
@@ -80,7 +80,7 @@
     <div class="container">
       
       <br>
-      <button type="button" class="btn btn-info">Meklēt pulciņu!</button>
+      <button onclick="sutitDatus()" type="button" class="btn btn-info">Meklēt pulciņu!</button>
     </div>
     <script>
       window.onload=function(){
@@ -108,7 +108,34 @@
               // }
            }
       })
-      }    
+      }   
+//Funkcija nolasa datus un nosutis talak  
+  function sutitDatus() {
+    let joma = document.getElementById("joma").value;
+    let pilsetas = document.getElementById("pilsetas").value;
+    let vecums = document.getElementById("vecums").value;
+    let diena = document.getElementById("diena").value;
+    let laiks = document.getElementById("laiks").value;
+    if(confirm(`Apstiprini savu izvēli: 
+              Pulciņa veids: ${joma}
+              Pilsēta: ${pilsetas}
+              Vecums: ${vecums}
+              Diena: ${diena}
+              Laiks: ${laiks}
+              `)){
+                var vardnica={joma:joma, pilsetas:pilsetas, vecums:vecums, diena:diena,
+        laiks:laiks};
+        jsonData = JSON.stringify(vardnica);
+        console.log(jsonData);        
+        alert("Dati saglabāti un nosūtīti!")
+              } else {
+                alert("Izvēlies vēlreiz!")
+              }
+}
+
+
+
+
         </script>
     
     

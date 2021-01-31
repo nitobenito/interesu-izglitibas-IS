@@ -16,8 +16,6 @@ def time():
   date_time = now.strftime("%d/%m/%Y, %H:%M:%S")
   return render_template('skolenu_izvelne.html', date_time=date_time)
 
-
-@app.route('/skolenu_izvelne')
 def skIzvele():
   return render_template('skolenu_izvelne.html')
 
