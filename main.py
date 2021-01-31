@@ -1,4 +1,6 @@
 from flask import Flask, render_template, jsonify
+from datetime import datetime
+
 
 app = Flask(__name__)
 app.config['JSON_AS_ASCII']=False
@@ -9,8 +11,16 @@ def index():
   return render_template('index.html')
 
 @app.route('/skolenu_izvelne')
+def time():
+  now = datetime.now() # current date and time
+  date_time = now.strftime("%d/%m/%Y, %H:%M:%S")
+  return render_template('skolenu_izvelne.html', date_time=date_time)
+
+
+@app.route('/skolenu_izvelne')
 def skIzvele():
   return render_template('skolenu_izvelne.html')
+
 
 @app.route('/IIC')
 def iic():
