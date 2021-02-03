@@ -14,6 +14,10 @@ def index():
 def uzTabulu():
   return render_template('tabula.html')
 
+@app.route('/pulcinu_saraksts')
+def pulcSar():
+  return render_template('pulcinu_saraksts.html')
+
 @app.route('/skolenu_izvelne')
 def time():
   now = datetime.now() # current date and time
