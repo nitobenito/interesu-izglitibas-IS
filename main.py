@@ -25,7 +25,7 @@ def iic():
   return render_template('IIC.html')  
 
 
-@app.route('/vecaku_pietekumus')
+@app.route('/vecaku_pieteikums')
 def vPieteikums():
   return render_template('vecaku_pieteikums.html')
 
