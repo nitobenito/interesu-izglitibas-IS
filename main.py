@@ -10,6 +10,10 @@ app.config['JSON_AS_ASCII']=False
 def index():
   return render_template('index.html')
 
+@app.route('/tabula')
+def uzTabulu():
+  return render_template('tabula.html')
+
 @app.route('/skolenu_izvelne')
 def time():
   now = datetime.now() # current date and time
@@ -19,6 +23,9 @@ def time():
 def skIzvele():
   return render_template('skolenu_izvelne.html')
 
+@app.route('/pub_data')
+def pub_dati():
+  return render_template('pub_data.html')
 
 @app.route('/IIC')
 def iic():
