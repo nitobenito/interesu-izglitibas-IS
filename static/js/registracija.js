@@ -9,7 +9,7 @@
     else{
     var dict={adrese:adrese, epasts:epasts, talrunis:talrunis, specialists:specialists, klubs:klubs};
     console.log(JSON.stringify(dict));
-    fetch('https://interesu-izglitibas-IS.nitobenito.repl.co/registret_IIC', {
+    fetch('https://interesu-izglitibas-IS.skarturs.repl.co/registret_IIC', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body:JSON.stringify(dict)
