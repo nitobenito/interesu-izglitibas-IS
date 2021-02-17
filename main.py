@@ -21,6 +21,10 @@ def iic():
 def vPieteikums():
   return render_template('vecaku_pieteikums.html')
 
+@app.route('/pinfo')
+def pinfo():
+  return render_template('pulcina_info.html')
+
 @app.route('/registret_IIC',methods=['POST'])
 def regIIC():
   with open("dati/iic.json", "r", encoding='utf-8') as f:
@@ -28,13 +32,27 @@ def regIIC():
   jaunsIIC= json.loads(request.data)
   for d in dati:
     if d["iicnosaukums"]==jaunsIIC["iicnosaukums"]:
-      return "ddddddddddddddddddddddd"
-     
+      #d["forma"]=render_template("forma.html")
+      atbilde={"statuss":"Šī IIC jau ir reģistrēta"}
+      atbilde["pulcins"]=render_template('pulcina_info.html')
+      return jsonify(atbilde)
+
   dati.append(jaunsIIC)
+
   with open("dati/iic.json", "w", encoding='utf-8') as f:
     f.write(json.dumps(dati))
- # return jsonify(jaunsIIC)
-    return "asdlkgjdflkhjgl"
+
+  atbilde={"statuss":"IIC veiksmīgi piereģistrēta"}
+  atbilde["pulcins"]=render_template('pulcina_info.html')
+  return jsonify(atbilde)
+
+@app.route('/testForm', methods=["POST"])
+def testForm():
+    vards = request.form["vards"]
+    pulcins= request.form["kas"]
+    laiks=request.form["kad"]
+    print(vards,pulcins,laiks)
+    return "vvv"
 
 if __name__ == "__main__":
    app.run("0.0.0.0", debug=True)

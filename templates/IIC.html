@@ -7,12 +7,13 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
    <script src='../static/js/registracija.js'></script>
 </head>
         
 <body>
-    <div class="container p-1 my-1 bg-success text-white">
+    <div class="container p-1 my-1 bg-success text-white" >
         <h1><center>Interešu izglītības centra nosaukums</center></h1>
         <div class="top-section">
         <div class="button-back-container">
@@ -23,9 +24,8 @@
             </a>
         </div> 
         <div class="container p-3 my-3 bg-warning text-white">
-                  <h2>Izdari savu izvēli</h2>
-                  <h5>Centra nosaukums</h5>
-            <title> comboBox </title>
+            <h2>Reģistrēt jaunu Interešu Izglītības centru</h2>
+            <h5>Centra nosaukums</h5>
             <form id="forma">
               
                 <select id="iicnosauk" name="iicnosauk">
@@ -47,7 +47,7 @@
           }    
             </script>   
                 
-            <div class="conteiner">
+            <div class="conteiner" id="iicsaturs">
                 <form class="form-horizontal">
                   <div class="form-group">
                    <label class="col-sm-2 control-label">Adrese<span style="color: red;"> *</span></label>
@@ -77,11 +77,12 @@
                 </form>   
                               
                 <!--<button class="poga1" onclick="location.href='registracija()'">Iesūtīt datni</button>-->
-                <button class="poga2" onclick="registracija();"> Reģistrēt jaunu pulciņu</button>
+                <button class="poga2" onclick="registracija();"> Reģistrēt jaunu IIC un pulciņu</button>
 
             </div>                       
         </div>       
     </div>
-      
+ <div id="statuss">ff</div>     
+ <div id="pulcins">gg</div>  
  </body>
 </html>

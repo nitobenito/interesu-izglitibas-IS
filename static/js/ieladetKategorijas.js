@@ -1,7 +1,7 @@
-joma = ["---", "💃 Dejas", "🎼 Mūzika", "🎬 Teātra māksla", "⚽️ Sports", "🎨 Vizuālā māksla", "🔧 Tehniskā jaunrade", "🌿 Vides izglītība", "💻 Informācijas tehnoloģijas", "📚 Akadēmiskā izglītība", " ❗ Citas programmas"]
-for (var i = 0; i < joma.length; i++) {
+var jomas = ["---", "💃 Dejas", "🎼 Mūzika", "🎬 Teātra māksla", "⚽️ Sports", "🎨 Vizuālā māksla", "🔧 Tehniskā jaunrade", "🌿 Vides izglītība", "💻 Informācijas tehnoloģijas", "📚 Akadēmiskā izglītība", " ❗ Citas programmas"]
+for (var i = 0; i < jomas.length; i++) {
     var option = document.createElement("option");
-    option.value = joma[i];
-    option.textContent = joma[i];
+    option.value = jomas[i];
+    option.textContent = jomas[i];
     document.getElementById("joma").appendChild(option);
 }
