@@ -30,6 +30,8 @@ def regIIC():
   with open("dati/iic.json", "r", encoding='utf-8') as f:
     dati = json.loads(f.read())
   jaunsIIC= json.loads(request.data)
+  for jd in jaunsIIC:
+    print(jd)
   for d in dati:
     if d["iicnosaukums"]==jaunsIIC["iicnosaukums"]:
       #d["forma"]=render_template("forma.html")
